@@ -212,10 +212,10 @@
       rowElement.querySelectorAll('p')[3].innerHTML = 2018 - Number(window.data[0] + window.data[1] + window.data[2] + window.data[3]) - 1;
       rowElement.querySelectorAll('p')[4].innerHTML = select.value;
       window.selectValue = select.value;
-      window.count = 0;
+      //window.count = 0;
       if (checkbox.checked) {
         rowElement.querySelector('.card__checkbox-input').setAttribute('checked', 'checked');
-        window.count = 1;
+        //window.count = 1;
       }
       window.cityValue = city.value;
       window.streetValue = street.value;
@@ -243,9 +243,9 @@
       cardElement.querySelector('.edit__date-input').innerHTML = window.data;
       //cardElement.querySelectorAll('p')[3].innerHTML = 2018 - Number(window.data[0] + window.data[1] + window.data[2] + window.data[3]) - 1;
       cardElement.querySelector('.edit__select').innerHTML = window.selectValue;
-      if (window.count === 1) {
+      /*if (window.count === 1) {
         cardElement.querySelector('.edit__checkbox-input').setAttribute('checked', 'checked');
-      }
+      }*/
       var number = randomInteger(5, 50);
       cardElement.querySelector('.edit__photo-input').id = ('photo-1' + number.toString);
       cardElement.querySelector('.edit__photo-input').name = 'photo-1' + number.toString;
