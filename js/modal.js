@@ -204,14 +204,23 @@
         window.namePhoto = allImages[allImages.length - 1].src;
       }
       rowElement.querySelectorAll('p')[0].innerHTML = name.value;
+      window.nameValue = name.value;
       rowElement.querySelectorAll('p')[1].innerHTML = surname.value;
+      window.surnameValue = surname.value;
       rowElement.querySelectorAll('p')[2].innerHTML = date.value;
-      var data = date.value;
-      rowElement.querySelectorAll('p')[3].innerHTML = 2018 - Number(data[0] + data[1] + data[2] + data[3]) - 1;
+      window.data = date.value;
+      rowElement.querySelectorAll('p')[3].innerHTML = 2018 - Number(window.data[0] + window.data[1] + window.data[2] + window.data[3]) - 1;
       rowElement.querySelectorAll('p')[4].innerHTML = select.value;
+      window.selectValue = select.value;
+      var count = 0;
       if (checkbox.checked) {
         rowElement.querySelector('.card__checkbox-input').setAttribute('checked', 'checked');
+        count = 1;
       }
+      window.cityValue = city.value;
+      window.streetValue = street.value;
+      window.houseValue = house.value;
+      window.flatValue = flat.value;
       rowElement.querySelectorAll('p')[5].innerHTML = 'г. ' + city.value + ', ' + street.value + ', ' + house.value + ', кв.' + flat.value;
       return rowElement;
     }
@@ -229,6 +238,14 @@
       cardElement.innerHTML = '<div class="edit__title"><h3 class="edit__title-text">Добавление/Редактирование</h3></div><form class="edit__form"><fieldset class="edit__photo"><input class="edit__photo-input" type="file"><label class="edit__photo-label">Здесь должно быть ваше фото - нажмите сюда для загрузки</label><img class="edit__image" src="" alt="Фото"></fieldset><div class="edit__container"><fieldset class="edit__name"><input class="edit__name-input" type="text" placeholder="Имя"><label class="edit__name-label"></label></fieldset><fieldset class="edit__surname"><input class="edit__surname-input" type="text" placeholder="Фамилия"><label class="edit__surname-label"></label></fieldset><fieldset class="edit__date"><input class="edit__date-input" type="date"><label class="edit__date-label"></label></fieldset><fieldset class="edit__work"><select class="edit__select"><option>должность</option><option>бухгалтер</option><option>программист</option><option>админ</option><option>техник</option><option>садовод</option><option>охранник</option><option>на дуде игрец</option></select></fieldset><fieldset class="edit__checkbox"><input class="edit__checkbox-input" type="checkbox" id="checkbox-2" name="checkbox-2"><label class="edit__checkbox-label" for="checkbox-2">Удаленка</label></fieldset></div><div class="edit__container edit__container--second"><fieldset class="edit__city"><input class="edit__city-input" type="text" placeholder="Город"><label class="edit__city-label"></label></fieldset><fieldset class="edit__street"><input class="edit__street-input" type="text" placeholder="Улица"><label class="edit__street-label"></label></fieldset><fieldset class="edit__house"><input class="edit__house-input" type="text" placeholder="Дом"><label class="edit__house-label"></label></fieldset><fieldset class="edit__flat"><input class="edit__flat-input" type="text" placeholder="Квартира"><label class="edit__flat-label"></label></fieldset></div><div class="edit__buttons"><button class="edit__button button" type="button">Сохранить</button><button class="edit__button-cancel button" type="button">Отмена</button></div></form>';
       var rows = modalWindow.querySelectorAll('.card__row-container');
       cardElement.querySelector('img').src = window.namePhoto;
+      cardElement.querySelector('.edit__name-input').innerHTML = window.nameValue;
+      cardElement.querySelector('.edit__surname-input').innerHTML = window.surnameValue;
+      cardElement.querySelector('.edit__date-input').innerHTML = window.data;
+      //cardElement.querySelectorAll('p')[3].innerHTML = 2018 - Number(window.data[0] + window.data[1] + window.data[2] + window.data[3]) - 1;
+      cardElement.querySelector('.edit__select').innerHTML = window.selectValue;
+      if (count === 1) {
+        cardElement.querySelector('.edit__checkbox-input').setAttribute('checked', 'checked');
+      }
       var number = randomInteger(5, 50);
       cardElement.querySelector('.edit__photo-input').id = ('photo-1' + number.toString);
       cardElement.querySelector('.edit__photo-input').name = 'photo-1' + number.toString;
