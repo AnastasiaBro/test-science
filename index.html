@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Тест Наука</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="body-style">
+
+    <!--<div style="display:none">
+      <include src="build/img/sprite.svg"></include>
+    </div>-->
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Карточка</h1>
+
+      <section class="window">
+        <div class="window__title">
+          <h3 class="window__title-text">Главное окно</h3>
+        </div>
+        <div class="window__main">
+          <label class="window__search">
+            <input class="window__input" type="text" placeholder="Поиск">
+          </label>
+          <div class="window__buttons-container">
+            <button class="window__button button">Добавить</button>
+            <button class="window__button button">Редактировать</button>
+            <button class="window__button button">Удалить</button>
+          </div>
+        </div>
+        <div class="window__card-container card">
+          <ul class="card__container">
+            <li class="card__title-container">
+              <p class="card__title card__title--first">Превью</p>
+              <p class="card__title card__title--first">Имя</p>
+              <p class="card__title card__title--fourth">Фамилия</p>
+              <p class="card__title card__title--fourth">Дата Рождения</p>
+              <p class="card__title card__title--third">Возраст</p>
+              <p class="card__title card__title--first">Должность</p>
+              <p class="card__title card__title--second">Удаленная работа</p>
+              <p class="card__title card__title--last">Адрес проживания</p>
+            </li>
+            <li class="card__row-container">
+              <div class="card__title card__title--first card__image">
+                <img class="card__photo" src="../img/photo-first.jpg" alt="Фото">
+              </div>
+              <p class="card__title card__title--first">Иван</p>
+              <p class="card__title card__title--fourth">Иванов</p>
+              <p class="card__title card__title--fourth">1984-03-21</p>
+              <p class="card__title card__title--third">33</p>
+              <p class="card__title card__title--first">техник</p>
+              <div class="card__title card__title--second card__title-checkbox">
+                <input class="card__checkbox-input" type="checkbox" name="work" id="work" disabled="">
+                <label class="card__checkbox-label" for="work"></label>
+              </div>
+              <p class="card__title card__title--last">г. СПб, Невский пр., 3/6, кв.1</p>
+            </li>
+            <li class="card__row-container">
+              <div class="card__title card__title--first card__image">
+                <img class="card__photo" src="../img/photo-second.jpg" alt="Фото">
+              </div>
+              <p class="card__title card__title--first">Петя</p>
+              <p class="card__title card__title--fourth">Петров</p>
+              <p class="card__title card__title--fourth">1994-08-17</p>
+              <p class="card__title card__title--third">23</p>
+              <p class="card__title card__title--first">программист</p>
+              <div class="card__title card__title--second card__title-checkbox">
+                <input class="card__checkbox-input" type="checkbox" name="work-second" id="work-second" checked="" disabled="">
+                <label class="card__checkbox-label" for="work-second"></label>
+              </div>
+              <p class="card__title card__title--last">г. Тюмень, ул. Лесная, 9, кв.7</p>
+            </li>
+            <li class="card__row-container">
+              <div class="card__title card__title--first card__image">
+                <img class="card__photo" src="../img/photo-third.jpg" alt="Фото">
+              </div>
+              <p class="card__title card__title--first">Женя</p>
+              <p class="card__title card__title--fourth">Безымянный</p>
+              <p class="card__title card__title--fourth">1983-01-12</p>
+              <p class="card__title card__title--third">34</p>
+              <p class="card__title card__title--first">бухгалтер</p>
+              <div class="card__title card__title--second card__title-checkbox">
+                <input class="card__checkbox-input" type="checkbox" name="work-third" id="work-third" disabled="">
+                <label class="card__checkbox-label" for="work-third"></label>
+              </div>
+              <p class="card__title card__title--last">г. СПб, ул. Гжатская, 21/2, кв.3</p>
+            </li>
+          </ul>
+        </div>
+        <div class="window__template">
+        </div>
+      </section>
+
+      <section class="add add--hidden">
+        <div class="add__title">
+          <h3 class="add__title-text">Добавление/Редактирование</h3>
+        </div>
+        <form class="add__form">
+          <fieldset class="add__photo">
+            <input class="add__photo-input" type="file" id="photo" name="photo">
+            <label class="add__photo-label" for="photo">Здесь должно быть ваше фото - нажмите сюда для загрузки</label>
+          </fieldset>
+          <div class="add__container">
+            <fieldset class="add__name">
+              <input class="add__name-input" type="text" id="user_name" name="user_name" placeholder="Имя">
+              <label class="add__name-label" for="user_name"></label>
+            </fieldset>
+            <fieldset class="add__surname">
+              <input class="add__surname-input" type="text" id="user_surname" name="user_surname" placeholder="Фамилия">
+              <label class="add__surname-label" for="user_surname"></label>
+            </fieldset>
+            <fieldset class="add__date">
+              <input class="add__date-input" type="date" id="user_date" name="user_date">
+              <label class="add__date-label" for="user_date"></label>
+            </fieldset>
+            <fieldset class="add__work">
+              <select class="add__select">
+                <option>должность</option>
+                <option>бухгалтер</option>
+                <option>программист</option>
+                <option>админ</option>
+                <option>техник</option>
+                <option>садовод</option>
+                <option>охранник</option>
+                <option>на дуде игрец</option>
+              </select>
+            </fieldset>
+            <fieldset class="add__checkbox">
+              <input class="add__checkbox-input" type="checkbox" name="work_checkbox" id="work_checkbox">
+              <label class="add__checkbox-label" for="work_checkbox">Удаленка</label>
+            </fieldset>
+          </div>
+          <div class="add__container add__container--second">
+            <fieldset class="add__city">
+              <input class="add__city-input" type="text" id="user_city" name="user_city" placeholder="Город">
+              <label class="add__city-label" for="user_city"></label>
+            </fieldset>
+            <fieldset class="add__street">
+              <input class="add__street-input" type="text" id="user_street" name="user_street" placeholder="Улица">
+              <label class="add__street-label" for="user_street"></label>
+            </fieldset>
+            <fieldset class="add__house">
+              <input class="add__house-input" type="text" id="user_house" name="user_house" placeholder="Дом">
+              <label class="add__house-label" for="user_house"></label>
+            </fieldset>
+            <fieldset class="add__flat">
+              <input class="add__flat-input" type="text" id="user_flat" name="user_flat" placeholder="Квартира">
+              <label class="add__flat-label" for="user_flat"></label>
+            </fieldset>
+          </div>
+          <div class="add__buttons">
+            <button class="add__button button" type="button">Сохранить</button>
+            <button class="add__button-cancel button" type="button">Отмена</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="section-edit">
+        <ul class="section-edit__cards-container">
+          <li class="section-edit__card edit edit__card--hidden">
+            <div class="edit__title">
+              <h3 class="edit__title-text">Добавление/Редактирование</h3>
+            </div>
+            <form class="edit__form">
+              <fieldset class="edit__photo">
+                <input class="edit__photo-input" type="file" id="photo-0" name="photo-0">
+                <label class="edit__photo-label" for="photo-0">Здесь должно быть ваше фото - нажмите сюда для загрузки</label>
+                <img class="edit__image" src="../img/photo-first.jpg" alt="Фото">
+              </fieldset>
+              <div class="edit__container">
+                <fieldset class="edit__name">
+                  <input class="edit__name-input" type="text" placeholder="Имя" value="Иван">
+                  <label class="edit__name-label"></label>
+                </fieldset>
+                <fieldset class="edit__surname">
+                  <input class="edit__surname-input" type="text" placeholder="Фамилия" value="Иванов">
+                  <label class="edit__surname-label"></label>
+                </fieldset>
+                <fieldset class="edit__date">
+                  <input class="edit__date-input" type="date" value="1984-03-21">
+                  <label class="edit__date-label"></label>
+                </fieldset>
+                <fieldset class="edit__work">
+                  <select class="edit__select">
+                    <option>должность</option>
+                    <option>бухгалтер</option>
+                    <option>программист</option>
+                    <option>админ</option>
+                    <option selected="">техник</option>
+                    <option>садовод</option>
+                    <option>охранник</option>
+                    <option>на дуде игрец</option>
+                  </select>
+                </fieldset>
+                <fieldset class="edit__checkbox">
+                  <input class="edit__checkbox-input" type="checkbox" id="checkbox-0" name="checkbox-0">
+                  <label class="edit__checkbox-label" for="checkbox-0">Удаленка</label>
+                </fieldset>
+              </div>
+              <div class="edit__container edit__container--second">
+                <fieldset class="edit__city">
+                  <input class="edit__city-input" type="text" placeholder="Город" value="СПб">
+                  <label class="edit__city-label"></label>
+                </fieldset>
+                <fieldset class="edit__street">
+                  <input class="edit__street-input" type="text" placeholder="Улица" value="Невский пр.">
+                  <label class="edit__street-label"></label>
+                </fieldset>
+                <fieldset class="edit__house">
+                  <input class="edit__house-input" type="text" placeholder="Дом" value="3/6">
+                  <label class="edit__house-label"></label>
+                </fieldset>
+                <fieldset class="edit__flat">
+                  <input class="edit__flat-input" type="text" placeholder="Квартира" value="1">
+                  <label class="edit__flat-label"></label>
+                </fieldset>
+              </div>
+              <div class="edit__buttons">
+                <button class="edit__button button" type="button">Сохранить</button>
+                <button class="edit__button-cancel button" type="button">Отмена</button>
+              </div>
+            </form>
+          </li>
+          <li class="section-edit__card edit edit__card--hidden">
+            <div class="edit__title">
+              <h3 class="edit__title-text">Добавление/Редактирование</h3>
+            </div>
+            <form class="edit__form">
+              <fieldset class="edit__photo">
+                <input class="edit__photo-input" type="file" id="photo-1" name="photo-1">
+                <label class="edit__photo-label" for="photo-1">Здесь должно быть ваше фото - нажмите сюда для загрузки</label>
+                <img class="edit__image" src="../img/photo-second.jpg" alt="Фото">
+              </fieldset>
+              <div class="edit__container">
+                <fieldset class="edit__name">
+                  <input class="edit__name-input" type="text" placeholder="Имя" value="Петя">
+                  <label class="edit__name-label"></label>
+                </fieldset>
+                <fieldset class="edit__surname">
+                  <input class="edit__surname-input" type="text" placeholder="Фамилия" value="Петров">
+                  <label class="edit__surname-label"></label>
+                </fieldset>
+                <fieldset class="edit__date">
+                  <input class="edit__date-input" type="date" value="1994-08-17">
+                  <label class="edit__date-label"></label>
+                </fieldset>
+                <fieldset class="edit__work">
+                  <select class="edit__select">
+                    <option>должность</option>
+                    <option>бухгалтер</option>
+                    <option selected="">программист</option>
+                    <option>админ</option>
+                    <option>техник</option>
+                    <option>садовод</option>
+                    <option>охранник</option>
+                    <option>на дуде игрец</option>
+                  </select>
+                </fieldset>
+                <fieldset class="edit__checkbox">
+                  <input class="edit__checkbox-input" type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
+                  <label class="edit__checkbox-label" for="checkbox-1">Удаленка</label>
+                </fieldset>
+              </div>
+              <div class="edit__container edit__container--second">
+                <fieldset class="edit__city">
+                  <input class="edit__city-input" type="text" placeholder="Город" value="Тюмень">
+                  <label class="edit__city-label"></label>
+                </fieldset>
+                <fieldset class="edit__street">
+                  <input class="edit__street-input" type="text" placeholder="Улица" value="ул. Лесная">
+                  <label class="edit__street-label"></label>
+                </fieldset>
+                <fieldset class="edit__house">
+                  <input class="edit__house-input" type="text" placeholder="Дом" value="9">
+                  <label class="edit__house-label"></label>
+                </fieldset>
+                <fieldset class="edit__flat">
+                  <input class="edit__flat-input" type="text" placeholder="Квартира" value="7">
+                  <label class="edit__flat-label"></label>
+                </fieldset>
+              </div>
+              <div class="edit__buttons">
+                <button class="edit__button button" type="button">Сохранить</button>
+                <button class="edit__button-cancel button" type="button">Отмена</button>
+              </div>
+            </form>
+          </li>
+          <li class="section-edit__card edit edit__card--hidden">
+            <div class="edit__title">
+              <h3 class="edit__title-text">Добавление/Редактирование</h3>
+            </div>
+            <form class="edit__form">
+              <fieldset class="edit__photo">
+                <input class="edit__photo-input" type="file" id="photo-2" name="photo-2">
+                <label class="edit__photo-label" for="photo-2">Здесь должно быть ваше фото - нажмите сюда для загрузки</label>
+                <img class="edit__image" src="../img/photo-third.jpg" alt="Фото">
+              </fieldset>
+              <div class="edit__container">
+                <fieldset class="edit__name">
+                  <input class="edit__name-input" type="text" placeholder="Имя" value="Женя">
+                  <label class="edit__name-label"></label>
+                </fieldset>
+                <fieldset class="edit__surname">
+                  <input class="edit__surname-input" type="text" placeholder="Фамилия" value="Безымянный">
+                  <label class="edit__surname-label"></label>
+                </fieldset>
+                <fieldset class="edit__date">
+                  <input class="edit__date-input" type="date" value="1983-01-12">
+                  <label class="edit__date-label"></label>
+                </fieldset>
+                <fieldset class="edit__work">
+                  <select class="edit__select">
+                    <option>должность</option>
+                    <option selected="">бухгалтер</option>
+                    <option>программист</option>
+                    <option>админ</option>
+                    <option>техник</option>
+                    <option>садовод</option>
+                    <option>охранник</option>
+                    <option>на дуде игрец</option>
+                  </select>
+                </fieldset>
+                <fieldset class="edit__checkbox">
+                  <input class="edit__checkbox-input" type="checkbox" id="checkbox-2" name="checkbox-2">
+                  <label class="edit__checkbox-label" for="checkbox-2">Удаленка</label>
+                </fieldset>
+              </div>
+              <div class="edit__container edit__container--second">
+                <fieldset class="edit__city">
+                  <input class="edit__city-input" type="text" placeholder="Город" value="СПб">
+                  <label class="edit__city-label"></label>
+                </fieldset>
+                <fieldset class="edit__street">
+                  <input class="edit__street-input" type="text" placeholder="Улица" value="ул. Гжатская">
+                  <label class="edit__street-label"></label>
+                </fieldset>
+                <fieldset class="edit__house">
+                  <input class="edit__house-input" type="text" placeholder="Дом" value="21/2">
+                  <label class="edit__house-label"></label>
+                </fieldset>
+                <fieldset class="edit__flat">
+                  <input class="edit__flat-input" type="text" placeholder="Квартира" value="3">
+                  <label class="edit__flat-label"></label>
+                </fieldset>
+              </div>
+              <div class="edit__buttons">
+                <button class="edit__button button" type="button">Сохранить</button>
+                <button class="edit__button-cancel button" type="button">Отмена</button>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="js/modal.js"></script>
+    <script src="js/picturefill.js"></script>
+    <script src="js/svgxuse.js"></script>
+    <script src="js/svg4everybody.js"></script>
+    <script src="js/objectfit.js"></script>
+  </body>
+</html>
