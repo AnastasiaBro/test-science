@@ -223,12 +223,12 @@
       cardElement.innerHTML = '<div class="edit__title"><h3 class="edit__title-text">Добавление/Редактирование</h3></div><form class="edit__form"><fieldset class="edit__photo"><input class="edit__photo-input" type="file"><label class="edit__photo-label">Здесь должно быть ваше фото - нажмите сюда для загрузки</label><img class="edit__image" src="" alt="Фото"></fieldset><div class="edit__container"><fieldset class="edit__name"><input class="edit__name-input" type="text" placeholder="Имя"><label class="edit__name-label"></label></fieldset><fieldset class="edit__surname"><input class="edit__surname-input" type="text" placeholder="Фамилия"><label class="edit__surname-label"></label></fieldset><fieldset class="edit__date"><input class="edit__date-input" type="date"><label class="edit__date-label"></label></fieldset><fieldset class="edit__work"><select class="edit__select"><option>должность</option><option>бухгалтер</option><option>программист</option><option>админ</option><option>техник</option><option>садовод</option><option>охранник</option><option>на дуде игрец</option></select></fieldset><fieldset class="edit__checkbox"><input class="edit__checkbox-input" type="checkbox" id="checkbox-2" name="checkbox-2"><label class="edit__checkbox-label" for="checkbox-2">Удаленка</label></fieldset></div><div class="edit__container edit__container--second"><fieldset class="edit__city"><input class="edit__city-input" type="text" placeholder="Город"><label class="edit__city-label"></label></fieldset><fieldset class="edit__street"><input class="edit__street-input" type="text" placeholder="Улица"><label class="edit__street-label"></label></fieldset><fieldset class="edit__house"><input class="edit__house-input" type="text" placeholder="Дом"><label class="edit__house-label"></label></fieldset><fieldset class="edit__flat"><input class="edit__flat-input" type="text" placeholder="Квартира"><label class="edit__flat-label"></label></fieldset></div><div class="edit__buttons"><button class="edit__button button" type="button">Сохранить</button><button class="edit__button-cancel button" type="button">Отмена</button></div></form>';
       var rows = modalWindow.querySelectorAll('.card__row-container');
       cardElement.querySelector('img').src = window.namePhoto;
-      cardElement.querySelector('.edit__photo-input').id = 'photo-' + (rows.length - 1);
-      cardElement.querySelector('.edit__photo-input').name = 'photo-' + (rows.length - 1);
-      cardElement.querySelector('.edit__photo-label').for = 'photo-' + (rows.length - 1);
-      cardElement.querySelector('.edit__checkbox-input').id = 'checkbox-' + (rows.length - 1);
-      cardElement.querySelector('.edit__checkbox-input').name = 'checkbox-' + (rows.length - 1);
-      cardElement.querySelector('.edit__checkbox-label').for = 'checkbox-' + (rows.length - 1);
+      cardElement.querySelector('.edit__photo-input').id = 'photo-' + (rows.length);
+      cardElement.querySelector('.edit__photo-input').name = 'photo-' + (rows.length);
+      cardElement.querySelector('.edit__photo-label').for = 'photo-' + (rows.length);
+      cardElement.querySelector('.edit__checkbox-input').id = 'checkbox-' + (rows.length);
+      cardElement.querySelector('.edit__checkbox-input').name = 'checkbox-' + (rows.length);
+      cardElement.querySelector('.edit__checkbox-label').for = 'checkbox-' + (rows.length);
       return cardElement;
     }
 
