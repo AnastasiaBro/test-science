@@ -242,7 +242,7 @@
       cardElement.querySelector('.edit__surname-input').innerHTML = window.surnameValue;
       cardElement.querySelector('.edit__date-input').innerHTML = window.data;
       //cardElement.querySelectorAll('p')[3].innerHTML = 2018 - Number(window.data[0] + window.data[1] + window.data[2] + window.data[3]) - 1;
-      cardElement.querySelector('.edit__select').innerHTML = window.selectValue;
+      //cardElement.querySelector('.edit__select').select = window.selectValue;
       /*if (window.count === 1) {
         cardElement.querySelector('.edit__checkbox-input').setAttribute('checked', 'checked');
       }*/
